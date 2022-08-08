@@ -1,0 +1,22 @@
+{
+	"luci-app-helloworld": {
+		"description": "Grant access to hello world configuration",
+		"read": {
+			"file": {
+				"/helloworld/configs/helloworld.conf": [ "read" ]
+			},
+			"ubus": {
+				"file": [ "read" ],
+				"luci": [ "getConntrackHelpers" ]
+			}
+		},
+		"write": {
+			"file": {
+				"/helloworld/configs/helloworld.conf": [ "write" ]
+			},
+			"ubus": {
+				"file": [ "write" ]
+			}
+		}
+	}
+}
